@@ -1,0 +1,26 @@
+# Default values for chart.
+
+# Develop with: 
+#     eval $(minikube docker-env)
+#     docker build -t declum/beanstalkd .
+#     helm uninstall beanstalkd; helm install --debug beanstalkd ./chart/
+
+replicaCount: 1
+
+image:
+  repository: declum/beanstalkd
+  tag: latest
+  pullPolicy: Never
+
+imagePullSecrets: []
+
+service:
+  type: ClusterIP
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
